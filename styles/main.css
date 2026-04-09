@@ -1,0 +1,114 @@
+/* Import theme variables */
+@import url('../config/theme.css');
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Focus styles for accessibility */
+a,
+button,
+input,
+textarea,
+[tabindex]:not([tabindex="-1"]) {
+    outline: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+[tabindex]:not([tabindex="-1"]):focus {
+    outline: var(--focus-outline) solid;
+    outline-offset: var(--focus-offset);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px 16px;
+    z-index: 1003;
+    transition: top 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    top: 0;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--scroll-progress-height);
+    background: transparent;
+    z-index: 1002;
+}
+
+.scroll-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--scroll-progress-color);
+    width: 0%;
+    transition: width 0.1s ease;
+    opacity: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Section base styles */
+.section {
+    padding: 100px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section-dark {
+    background: var(--dark-light);
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+}

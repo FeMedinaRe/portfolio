@@ -1,0 +1,28 @@
+/* Theme Configuration - CSS Variables */
+:root {
+    /* Primary Colors */
+    --primary: #2563eb;
+    --primary-rgb: 37, 99, 235;
+    --primary-dark: #1d4ed8;
+    
+    /* Semantic Colors */
+    --secondary: #64748b;
+    --success: #10b981;
+    --error: #ef4444;
+    
+    /* Neutral Colors */
+    --dark: #0a0a0a;
+    --dark-light: #1a1a1a;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --gray: #94a3b8;
+    --border: #2a2a2a;
+    
+    /* Component Sizes */
+    --scroll-progress-height: 4px;
+    
+    /* Focus & Accessibility */
+    --scroll-progress-color: var(--primary);
+    --focus-outline: 2px solid var(--primary);
+    --focus-offset: 2px;
+}
