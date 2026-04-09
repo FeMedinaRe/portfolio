@@ -4,17 +4,16 @@ const translations = {
         'meta-title': 'Felipe Medina | Analista de Sistemas',
         'meta-description': 'Especializado en infraestructura escalable, administración de sistemas y cloud computing.',
 
-        // Navigation
-        'skip-link': 'Saltar al contenido principal',
-        'nav-inicio': 'Inicio',
-        'nav-sobre-mi': 'Sobre mí',
-        'nav-experiencia': 'Experiencia',
-        'nav-habilidades': 'Habilidades',
-        'nav-proyectos': 'Proyectos',
-        'nav-certificaciones': 'Certificaciones',
-        'nav-contacto': 'Contacto',
-        'logo-aria': 'Ir al inicio',
-        'menu-toggle-aria': 'Abrir menú',
+         // Navigation
+         'skip-link': 'Saltar al contenido principal',
+         'nav-inicio': 'Inicio',
+         'nav-sobre-mi': 'Sobre mí',
+         'nav-experiencia': 'Experiencia',
+         'nav-habilidades': 'Habilidades',
+         'nav-proyectos': 'Proyectos',
+         'nav-certificaciones': 'Certificaciones',
+         'logo-aria': 'Ir al inicio',
+         'menu-toggle-aria': 'Abrir menú',
 
         // Hero Section
         'hero-subtitle': 'Hola, soy',
@@ -22,10 +21,8 @@ const translations = {
         'hero-tagline': 'Analista de Sistemas | Estudiante de Ingeniería en Computación',
         'hero-description': 'Especializado en diseño e implementación de infraestructura escalable, administración de sistemas Linux y arquitectura en la nube. Estudiante de pregrado en Ingeniería en Computación desarrollando tesis en evaluación de bases de datos para almacenamiento masivo. Experiencia práctica en AWS, hardening de sistemas, configuración de redes y seguridad de infraestructura.',
         'hero-btn-projects': 'Ver proyectos',
-        'hero-btn-contact': 'Contactar',
         'hero-social-github': 'GitHub',
         'hero-social-linkedin': 'LinkedIn',
-        'hero-social-twitter': 'Twitter',
         'avatar-aria': 'Avatar - Felipe Medina',
         'avatar-alt': 'Foto de perfil de Felipe Medina, Analista de Sistemas',
         'project-1-alt': 'Proyecto de tesis: Evaluación de bases de datos para almacenamiento de datos proteicos 3D',
@@ -114,16 +111,7 @@ const translations = {
         'cert-4-org': 'Diplomados en Ciberseguridad',
         'cert-4-date': 'Septiembre 2025',
 
-        // Contact Section
-        'contact-title': 'Hablemos',
-        'contact-p1': '¿Tienes un proyecto en mente? ¿Quieres colaborar? Me encantaría escuchar sobre tu idea o propuesta.',
-        'contact-p2': 'Estoy siempre abierto a nuevos desafíos y oportunidades profesionales en infraestructura, cloud computing y ciberseguridad.',
-        'contact-label-name': 'Nombre',
-        'contact-label-email': 'Email',
-        'contact-label-message': 'Mensaje',
-        'contact-btn-submit': 'Enviar mensaje',
-        'contact-form-success': '¡Gracias por tu mensaje! Te contactaré pronto.',
-        'contact-form-error': 'Por favor, completa todos los campos correctamente.',
+        // Contact Section (Removed - Form deleted)
         'contact-icon-email': 'Email',
         'contact-icon-location': 'Ubicación',
         'contact-email': 'felipe.medina98@gmail.com',
@@ -133,7 +121,6 @@ const translations = {
         'footer-copyright': '© 2026 Felipe Medina. Todos los derechos reservados.',
         'footer-github': 'GitHub',
         'footer-linkedin': 'LinkedIn',
-        'footer-twitter': 'Twitter',
 
         // Language Toggle
         'lang-toggle-aria': 'Cambiar idioma',
@@ -143,28 +130,25 @@ const translations = {
         'meta-title': 'Felipe Medina | Systems Analyst',
         'meta-description': 'Specialized in scalable infrastructure, systems administration and cloud computing.',
 
-        // Navigation
-        'skip-link': 'Skip to main content',
-        'nav-inicio': 'Home',
-        'nav-sobre-mi': 'About',
-        'nav-experiencia': 'Experience',
-        'nav-habilidades': 'Skills',
-        'nav-proyectos': 'Projects',
-        'nav-certificaciones': 'Certifications',
-        'nav-contacto': 'Contact',
-        'logo-aria': 'Go to home',
-        'menu-toggle-aria': 'Toggle menu',
+         // Navigation
+         'skip-link': 'Skip to main content',
+         'nav-inicio': 'Home',
+         'nav-sobre-mi': 'About',
+         'nav-experiencia': 'Experience',
+         'nav-habilidades': 'Skills',
+         'nav-proyectos': 'Projects',
+         'nav-certificaciones': 'Certifications',
+         'logo-aria': 'Go to home',
+         'menu-toggle-aria': 'Toggle menu',
 
         // Hero Section
         'hero-subtitle': 'Hi, I\'m',
         'hero-title': 'Felipe Medina',
         'hero-tagline': 'Systems Analyst | Computer Engineering Student',
         'hero-description': 'Specialized in designing and implementing scalable infrastructure, Linux systems administration, and cloud architecture. Undergraduate student in Computer Engineering developing a thesis on evaluating databases for massive storage. Practical experience in AWS, system hardening, network configuration, and infrastructure security.',
-        'hero-btn-projects': 'View projects',
-        'hero-btn-contact': 'Contact',
-        'hero-social-github': 'GitHub',
-        'hero-social-linkedin': 'LinkedIn',
-        'hero-social-twitter': 'Twitter',
+         'hero-btn-projects': 'View projects',
+         'hero-social-github': 'GitHub',
+         'hero-social-linkedin': 'LinkedIn',
         'avatar-aria': 'Avatar - Felipe Medina',
         'avatar-alt': 'Profile picture of Felipe Medina, Systems Analyst',
         'project-1-alt': 'Thesis project: Comparative evaluation of databases for 3D protein data storage',
@@ -253,26 +237,16 @@ const translations = {
         'cert-4-org': 'Diplomados en Ciberseguridad',
         'cert-4-date': 'September 2025',
 
-        // Contact Section
-        'contact-title': 'Let\'s Talk',
-        'contact-p1': 'Do you have a project in mind? Want to collaborate? I\'d love to hear about your idea or proposal.',
-        'contact-p2': 'I\'m always open to new challenges and professional opportunities in infrastructure, cloud computing, and cybersecurity.',
-        'contact-label-name': 'Name',
-        'contact-label-email': 'Email',
-        'contact-label-message': 'Message',
-        'contact-btn-submit': 'Send message',
-        'contact-form-success': 'Thank you for your message! I\'ll contact you soon.',
-        'contact-form-error': 'Please fill in all fields correctly.',
-        'contact-icon-email': 'Email',
-        'contact-icon-location': 'Location',
-        'contact-email': 'felipe.medina98@gmail.com',
-        'contact-location': 'Concepción, Chile',
+         // Contact Section (Removed - Form deleted)
+         'contact-icon-email': 'Email',
+         'contact-icon-location': 'Location',
+         'contact-email': 'felipe.medina98@gmail.com',
+         'contact-location': 'Concepción, Chile',
 
-        // Footer
-        'footer-copyright': '© 2026 Felipe Medina. All rights reserved.',
-        'footer-github': 'GitHub',
-        'footer-linkedin': 'LinkedIn',
-        'footer-twitter': 'Twitter',
+         // Footer
+         'footer-copyright': '© 2026 Felipe Medina. All rights reserved.',
+         'footer-github': 'GitHub',
+         'footer-linkedin': 'LinkedIn',
 
         // Language Toggle
         'lang-toggle-aria': 'Change language',
