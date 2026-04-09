@@ -7,6 +7,82 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinksItems = document.querySelectorAll('.nav-links a');
     const scrollProgressBar = document.getElementById('scrollProgressBar');
     const skipLink = document.querySelector('.skip-link');
+    const langToggle = document.getElementById('langToggle');
+
+    // Initialize language system
+    const DEFAULT_LANGUAGE = 'es';
+    let currentLanguage = localStorage.getItem('preferredLanguage') || navigator.language.split('-')[0] || DEFAULT_LANGUAGE;
+    if (currentLanguage !== 'es' && currentLanguage !== 'en') {
+        currentLanguage = DEFAULT_LANGUAGE;
+    }
+
+    // Apply initial language
+    changeLanguage(currentLanguage);
+
+    // Language toggle button event listener
+    langToggle.addEventListener('click', function() {
+        const newLanguage = currentLanguage === 'es' ? 'en' : 'es';
+        changeLanguage(newLanguage);
+    });
+
+    // Change language function
+    function changeLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('preferredLanguage', lang);
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+
+        // Update all data-i18n attributes
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+
+        // Update all data-i18n-aria attributes
+        document.querySelectorAll('[data-i18n-aria]').forEach(element => {
+            const key = element.getAttribute('data-i18n-aria');
+            if (translations[lang] && translations[lang][key]) {
+                element.setAttribute('aria-label', translations[lang][key]);
+            }
+        });
+
+        // Update meta tags
+        const titleElement = document.querySelector('title');
+        if (titleElement && translations[lang]) {
+            titleElement.textContent = translations[lang]['meta-title'];
+        }
+
+        const descriptionMeta = document.querySelector('meta[name="description"]');
+        if (descriptionMeta && translations[lang]) {
+            descriptionMeta.setAttribute('content', translations[lang]['meta-description']);
+        }
+
+        const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+        if (ogDescriptionMeta && translations[lang]) {
+            ogDescriptionMeta.setAttribute('content', translations[lang]['meta-description']);
+        }
+
+        const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+        if (ogTitleMeta && translations[lang]) {
+            ogTitleMeta.setAttribute('content', translations[lang]['meta-title']);
+        }
+
+        // Update language toggle button visual state
+        const langEs = document.querySelector('.lang-es');
+        const langEn = document.querySelector('.lang-en');
+        if (langEs && langEn) {
+            if (lang === 'es') {
+                langEs.classList.add('active');
+                langEn.classList.remove('active');
+            } else {
+                langEs.classList.remove('active');
+                langEn.classList.add('active');
+            }
+        }
+    }
 
     // Throttle helper function to limit scroll event calls
     function throttle(func, wait) {
@@ -112,11 +188,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (isValid) {
-            formMessage.textContent = '¡Gracias por tu mensaje! Te contactaré pronto.';
+            formMessage.textContent = translations[currentLanguage]['contact-form-success'];
             formMessage.className = 'form-message success show';
             contactForm.reset();
         } else {
-            formMessage.textContent = 'Por favor, completa todos los campos correctamente.';
+            formMessage.textContent = translations[currentLanguage]['contact-form-error'];
             formMessage.className = 'form-message error show';
         }
 
