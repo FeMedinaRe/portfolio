@@ -140,7 +140,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (windowScroll / windowHeight) * 100;
         if (scrollProgressBar) {
-            scrollProgressBar.style.width = scrolled + '%';
+            // Show bar only if user has scrolled
+            if (windowScroll > 0) {
+                scrollProgressBar.style.opacity = '1';
+                scrollProgressBar.style.width = scrolled + '%';
+            } else {
+                scrollProgressBar.style.opacity = '0';
+                scrollProgressBar.style.width = '0%';
+            }
         }
         
         // Parallax effect for hero image
@@ -156,8 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add scroll progress event listener with throttling
     window.addEventListener('scroll', throttledScroll);
-    // Also update on load for cases where page starts scrolled
-    updateScrollProgress();
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
