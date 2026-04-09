@@ -131,7 +131,7 @@ Ver `docs/CONTRIBUTING.md` para guía completa.
 
 ## Links
 
-- 🌐 [Sitio Live](https://femedinare.dev)
+- 🌐 [Sitio Live](https://portfolio.femedinare.workers.dev/)
 - 💼 [LinkedIn](https://linkedin.com/in/femedinare)
 - 🐙 [GitHub](https://github.com/FeMedinaRe)
 
@@ -144,4 +144,4 @@ MIT - Ver LICENSE para detalles
 **Felipe Medina**
 - Analista de Sistemas
 - Estudiante de Ingeniería en Computación
-- Especializado en Cloud, Infrastructure y Seguridad
+- Especializado en Cloud, Infrastructura y Seguridad
