@@ -1,6 +1,36 @@
-# wrangler files
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build & Distribution
+dist/
+build/
+*.min.js
+*.min.css
+
+# Development
+.DS_Store
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Wrangler (Cloudflare)
 .wrangler
 .dev.vars*
 !.dev.vars.example
-.env*
-!.env.example
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+logs/
