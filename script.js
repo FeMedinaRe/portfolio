@@ -49,6 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Update all data-i18n-alt attributes
+        document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+            const key = element.getAttribute('data-i18n-alt');
+            if (translations[lang] && translations[lang][key]) {
+                element.setAttribute('alt', translations[lang][key]);
+            }
+        });
+
         // Update meta tags
         const titleElement = document.querySelector('title');
         if (titleElement && translations[lang]) {

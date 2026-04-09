@@ -27,6 +27,10 @@ const translations = {
         'hero-social-linkedin': 'LinkedIn',
         'hero-social-twitter': 'Twitter',
         'avatar-aria': 'Avatar - Felipe Medina',
+        'avatar-alt': 'Foto de perfil de Felipe Medina, Analista de Sistemas',
+        'project-1-alt': 'Proyecto de tesis: Evaluación de bases de datos para almacenamiento de datos proteicos 3D',
+        'project-2-alt': 'Sistema de monitoreo y gestión de laboratorios de computación',
+        'project-3-alt': 'Implementación de servicios de red y virtualización',
 
         // About Section
         'about-title': 'Sobre mí',
@@ -162,6 +166,10 @@ const translations = {
         'hero-social-linkedin': 'LinkedIn',
         'hero-social-twitter': 'Twitter',
         'avatar-aria': 'Avatar - Felipe Medina',
+        'avatar-alt': 'Profile picture of Felipe Medina, Systems Analyst',
+        'project-1-alt': 'Thesis project: Comparative evaluation of databases for 3D protein data storage',
+        'project-2-alt': 'Computing laboratory monitoring and management system',
+        'project-3-alt': 'Network services and virtualization implementation',
 
         // About Section
         'about-title': 'About Me',
