@@ -2,50 +2,45 @@
 
 ## Vista General
 
-Este proyecto ha sido reestructurado para mayor mantenibilidad, escalabilidad y modularidad. Se separaron los concerns (CSS, JavaScript, Traducciones) en módulos independientes.
+Este es un proyecto **100% estático** sin dependencias, diseñado para ser servido en **Cloudflare Pages**. Ha sido reestructurado para mayor mantenibilidad, escalabilidad y modularidad. Se separaron los concerns (CSS, JavaScript, Traducciones) en módulos independientes usando ES6 modules nativos.
 
 ```
 portfolio/
 ├── index.html                          # HTML semántico (entry point)
 ├── styles/
-│   ├── main.css                        # Reset, variables, layout base
-│   ├── components.css                  # Buttons, cards, avatars
-│   ├── sections.css                    # Hero, about, experience, skills, etc.
-│   ├── responsive.css                  # Media queries por breakpoint
-│   └── animations.css                  # Keyframes centralizadas
+│   ├── main.css                        # Reset y base
+│   ├── animations.css                  # Keyframes centralizadas
+│   ├── components.css                  # Componentes reutilizables
+│   ├── sections.css                    # Estilos por sección
+│   └── responsive.css                  # Media queries por breakpoint
 ├── config/
-│   └── theme.css                       # Solo variables CSS (fácil para reteming)
+│   └── theme.css                       # Variables CSS (fácil para reteming)
 ├── scripts/
 │   ├── main.js                         # Entry point, inicializa módulos
 │   ├── modules/
-│   │   ├── navigation.js               # Menu toggle, smooth scroll
+│   │   ├── navigation.js               # Menú y scroll smooth
 │   │   ├── i18n.js                     # Sistema de traducción
-│   │   ├── scroll.js                   # Parallax, progress bar, observers
-│   │   └── accessibility.js            # Skip link, focus management
+│   │   ├── scroll.js                   # Parallax y observers
+│   │   └── accessibility.js            # Skip link y a11y
 │   └── utils/
-│       └── throttle.js                 # Utilidades (throttle, etc)
+│       └── throttle.js                 # Utilidades
 ├── i18n/
 │   ├── es.json                         # Traducciones español
 │   ├── en.json                         # Traducciones inglés
-│   └── index.js                        # Loader dinámico i18n
+│   └── index.js                        # Loader dinámico
 ├── images/
-│   ├── profile/
-│   │   └── avatar.jpg
-│   ├── projects/
-│   │   ├── project-1.jpg
-│   │   ├── project-2.jpg
-│   │   └── project-3.jpg
-│   └── icons/                          # Icons si es necesario
+│   ├── profile/avatar.jpg
+│   └── projects/
+│       ├── project-1.jpg
+│       ├── project-2.jpg
+│       └── project-3.jpg
 ├── docs/
 │   ├── STRUCTURE.md                    # Esta documentación
-│   └── CONTRIBUTING.md                 # Guía de contribución
-├── public/
-│   └── favicon.svg
-├── .github/
-│   └── workflows/                      # CI/CD si lo necesitas
-├── package.json                        # Scripts y dependencias
-├── AGENTS.md                           # Información para agentes
-└── README.md
+│   └── CONTRIBUTING.md                 # Guía de edición
+├── .nojekyll                           # Archivo para Cloudflare Pages
+├── .gitignore
+├── README.md
+└── AGENTS.md
 ```
 
 ## Módulos de JavaScript
@@ -176,17 +171,21 @@ App ready ✓
 | **Testabilidad** | Funciones puras que pueden ser unitarias |
 | **Cacheability** | Archivos pueden ser cacheados separadamente |
 
-## Notas sobre Migraciones
+## Notas Técnicas
 
-- El `animations.css` debe ser importado DESPUÉS de `main.css` para que las keyframes estén disponibles
-- El `config/theme.css` es importado por `main.css` para las variables
-- El `responsive.css` debe ser el último para que los media queries overrideen si es necesario
-- Los módulos JS usan ES6 modules (`import/export`) requieren `type="module"` en el script tag
+- `animations.css` se importa DESPUÉS de `main.css` para que las keyframes estén disponibles
+- `config/theme.css` se importa desde `main.css` para las variables CSS
+- `responsive.css` es el último para que los media queries tengan precedencia
+- Los módulos JS usan ES6 modules (`import/export`) - requieren `type="module"` en el script tag
+- **Sin bundler**: Los navegadores modernos soportan nativamente ES6 modules
 
-## Próximos Pasos Recomendados
+## Despliegue en Cloudflare Pages
 
-1. **Build Tool** (opcional): Agregar Vite o Webpack para minificación
-2. **Testing**: Agregar Jest para unit tests de módulos
-3. **Linting**: ESLint para JavaScript, Stylelint para CSS
-4. **CI/CD**: GitHub Actions para automated testing/deployment
-5. **Análisis**: Lighthouse para auditorías de performance
+Este proyecto está listo para servirse en Cloudflare Pages:
+
+1. Conectar repositorio de GitHub
+2. Seleccionar rama `main`
+3. Cloudflare automáticamente servirá los archivos estáticos
+4. El archivo `.nojekyll` asegura que se sirvan todos los archivos
+
+No requiere build process ni dependencias.

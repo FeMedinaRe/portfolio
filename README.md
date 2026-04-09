@@ -22,33 +22,28 @@ portfolio/
 ├── config/                     # Configuración (variables CSS)
 ├── images/                     # Imágenes del sitio
 ├── docs/                       # Documentación
-└── package.json               # Configuración del proyecto
+└── README.md
 ```
 
 ## Inicio Rápido
 
 ### Requisitos
-- Python 3.x (para servidor local)
-- Navegador moderno con soporte para ES6 modules
+- Navegador moderno (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+- **Sin dependencias** - Proyecto 100% estático
 
 ### Desarrollo Local
 
 ```bash
-# Instalar dependencias (si las hay)
-npm install
-
-# Iniciar servidor local
-npm run dev
-
-# Ver en navegador
-npm run preview
-# o manualmente: http://localhost:8000
-```
-
-### Con Python
-```bash
+# Opción 1: Python (recomendado)
 python -m http.server 8000
+
+# Opción 2: Node.js http-server (si tienes instalado)
+npx http-server
+
+# Opción 3: VS Code Live Server extension
 ```
+
+Luego abre en el navegador: `http://localhost:8000`
 
 ## Edición de Contenido
 
@@ -81,9 +76,9 @@ Ver `docs/CONTRIBUTING.md` para guía completa.
 
 - **HTML5** - Semántico y accesible
 - **CSS3** - Variables, Grid, Flexbox, Media queries
-- **JavaScript** - ES6 modules, vanilla (sin frameworks)
+- **JavaScript** - ES6 modules, vanilla (sin frameworks ni bundler)
 - **JSON** - Traducciones limpias
-- **Git** - Control de versiones
+- **Cero Dependencias** - Proyecto 100% estático
 
 ## Características Principales
 
