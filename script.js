@@ -8,6 +8,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollProgressBar = document.getElementById('scrollProgressBar');
     const skipLink = document.querySelector('.skip-link');
 
+    // Throttle helper function to limit scroll event calls
+    function throttle(func, wait) {
+        let timeout;
+        let previous = 0;
+        return function executedFunction(...args) {
+            const now = Date.now();
+            const remaining = wait - (now - previous);
+
+            if (remaining <= 0 || remaining > wait) {
+                if (timeout) {
+                    clearTimeout(timeout);
+                    timeout = null;
+                }
+                previous = now;
+                func.apply(this, args);
+            } else if (!timeout) {
+                timeout = setTimeout(() => {
+                    previous = Date.now();
+                    timeout = null;
+                    func.apply(this, args);
+                }, remaining);
+            }
+        };
+    }
+
     menuToggle.addEventListener('click', function() {
         menuToggle.classList.toggle('active');
         navLinks.classList.toggle('active');
@@ -104,11 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // More robust email validation regex
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailRegex.test(email);
     }
 
-    // Update scroll progress bar
+    // Update scroll progress bar with throttling
     function updateScrollProgress() {
         const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -125,8 +151,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add scroll progress event listener
-    window.addEventListener('scroll', updateScrollProgress);
+    // Throttle scroll event to improve performance (update every 16ms ~60fps)
+    const throttledScroll = throttle(updateScrollProgress, 16);
+
+    // Add scroll progress event listener with throttling
+    window.addEventListener('scroll', throttledScroll);
     // Also update on load for cases where page starts scrolled
     updateScrollProgress();
 
