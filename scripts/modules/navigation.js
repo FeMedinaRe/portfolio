@@ -7,7 +7,7 @@ export function initNavigation() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const navLinksItems = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('.section');
+    const sections = document.querySelectorAll('.section, .hero');
 
     // Menu toggle
     if (menuToggle && navLinks) {
