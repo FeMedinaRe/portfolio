@@ -1,0 +1,13 @@
+{
+  "name": "fmedina-portfolio",
+  "version": "1.0.0",
+  "description": "Portafolio profesional de Felipe Medina",
+  "scripts": {
+    "dev": "npx live-server public --port=8000 --no-browser",
+    "serve": "python3 -m http.server 8000 --directory public",
+    "wrangler": "npx wrangler dev",
+    "preview": "npx wrangler dev --no-watch"
+  },
+  "author": "Felipe Medina",
+  "license": "MIT"
+}
