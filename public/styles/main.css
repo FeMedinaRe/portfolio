@@ -104,6 +104,8 @@ textarea:focus,
 
 .section-dark {
     background: var(--dark-light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .section-title {
@@ -111,4 +113,19 @@ textarea:focus,
     font-weight: 700;
     text-align: center;
     margin-bottom: 60px;
+    color: var(--white);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    border-radius: 2px;
 }

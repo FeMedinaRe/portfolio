@@ -1,25 +1,29 @@
 /* Theme Configuration - CSS Variables */
 :root {
     /* Primary Colors */
-    --primary: #2563eb;
-    --primary-rgb: 37, 99, 235;
-    --primary-dark: #1d4ed8;
+    --primary: #3b82f6;
+    --primary-rgb: 59, 130, 246;
+    --primary-dark: #2563eb;
     
     /* Semantic Colors */
     --secondary: #64748b;
     --success: #10b981;
     --error: #ef4444;
     
-    /* Neutral Colors */
-    --dark: #0a0a0a;
-    --dark-light: #1a1a1a;
+    /* Neutral Colors - Dark Theme (Softened) */
+    --dark: #0f0f10;
+    --dark-light: #15151a;
+    --dark-lighter: #1e1e24;
     --light: #f8fafc;
     --white: #ffffff;
-    --gray: #94a3b8;
-    --border: #2a2a2a;
+    --gray: #a0a9b8;
+    --gray-light: #cbd5e1;
+    --border: #2a2a30;
     
     /* Component Sizes */
     --scroll-progress-height: 4px;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
     
     /* Focus & Accessibility */
     --scroll-progress-color: var(--primary);
