@@ -94,22 +94,24 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 24px;
-        height: 18px;
+        width: 22px;
+        height: 16px;
         order: 2;
-        padding: 13px;
-        background: none;
+        padding: 14px;
+        background: transparent;
         border: none;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
     }
 
     .menu-toggle span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: var(--white);
+        display: block !important;
+        width: 100% !important;
+        height: 2.5px !important;
+        background-color: #fff !important;
         border-radius: 2px;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     .menu-toggle.active span:nth-child(1) {
