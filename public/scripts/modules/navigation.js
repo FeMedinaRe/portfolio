@@ -11,11 +11,14 @@ export function initNavigation() {
 
     // Menu toggle
     if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
             const isExpanded = menuToggle.classList.contains('active');
             menuToggle.setAttribute('aria-expanded', isExpanded);
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isExpanded ? 'hidden' : '';
         });
 
         // Close menu when clicking a nav link
@@ -24,7 +27,28 @@ export function initNavigation() {
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             });
+        });
+
+        // Close menu when clicking on the overlay (outside nav links)
+        navLinks.addEventListener('click', function(e) {
+            if (e.target === navLinks) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
         });
     }
 
