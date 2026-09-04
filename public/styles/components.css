@@ -301,6 +301,20 @@
     box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
 }
 
+.cert-pending {
+    opacity: 0.65;
+    border: 1px dashed var(--border);
+}
+
+.cert-pending::before {
+    background: linear-gradient(90deg, var(--gray), var(--gray-light));
+}
+
+.cert-pending .cert-module {
+    color: var(--gray);
+    font-style: italic;
+}
+
 /* Form Elements */
 .form-group {
     margin-bottom: 20px;
