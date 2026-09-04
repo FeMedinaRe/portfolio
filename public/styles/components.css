@@ -32,13 +32,17 @@
 }
 
 /* Navigation Links */
-.nav-links {
+.desktop-nav {
+    display: block;
+}
+
+.nav-links-desktop {
     display: flex;
     list-style: none;
     gap: 32px;
 }
 
-.nav-links a {
+.nav-links-desktop a {
     color: var(--gray);
     text-decoration: none;
     font-size: 14px;
@@ -46,9 +50,13 @@
     transition: color 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links-desktop a:hover,
+.nav-links-desktop a.active {
     color: var(--white);
+}
+
+.mobile-nav {
+    display: none;
 }
 
 /* Menu Toggle Button */

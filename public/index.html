@@ -30,13 +30,8 @@
     <header class="navbar">
         <div class="nav-content">
             <a href="#inicio" class="logo" aria-label="Ir al inicio" data-i18n-aria="logo-aria">FM</a>
-            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" data-i18n-aria="menu-toggle-aria">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav>
-                <ul class="nav-links">
+            <nav class="desktop-nav">
+                <ul class="nav-links-desktop">
                     <li><a href="#inicio" data-i18n="nav-inicio">Inicio</a></li>
                     <li><a href="#sobre-mi" data-i18n="nav-sobre-mi">Sobre mí</a></li>
                     <li><a href="#experiencia" data-i18n="nav-experiencia">Experiencia</a></li>
@@ -45,12 +40,27 @@
                     <li><a href="#certificaciones" data-i18n="nav-certificaciones">Certificaciones</a></li>
                 </ul>
             </nav>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" data-i18n-aria="menu-toggle-aria">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma" data-i18n-aria="lang-toggle-aria">
                 <span class="lang-es">ES</span>
                 <span class="lang-en">EN</span>
             </button>
         </div>
     </header>
+    <nav class="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="#inicio" data-i18n="nav-inicio">Inicio</a></li>
+            <li><a href="#sobre-mi" data-i18n="nav-sobre-mi">Sobre mí</a></li>
+            <li><a href="#experiencia" data-i18n="nav-experiencia">Experiencia</a></li>
+            <li><a href="#habilidades" data-i18n="nav-habilidades">Habilidades</a></li>
+            <li><a href="#proyectos" data-i18n="nav-proyectos">Proyectos</a></li>
+            <li><a href="#certificaciones" data-i18n="nav-certificaciones">Certificaciones</a></li>
+        </ul>
+    </nav>
 
     <main id="main-content">
         <section id="inicio" class="hero">
